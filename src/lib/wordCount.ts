@@ -1,3 +1,10 @@
+// Content statistics helpers used by the studio editor.
+//
+// `estimateReadingTime` assumes ~200 words per minute, which is a common
+// average for silent reading of web copy, and always rounds up to at least one
+// minute so short snippets never display "0 min read".
+
+/** Count whitespace-delimited words, treating empty/whitespace input as zero. */
 export function countWords(text: string): number {
   if (!text.trim()) return 0
   return text.trim().split(/\s+/).length
